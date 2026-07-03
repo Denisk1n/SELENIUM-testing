@@ -16,14 +16,12 @@ class TestChangeMyInfo(TestBase):
       self.login_page.open()
       self.login_page.enter_login(self.data.LOGIN)
       self.login_page.enter_password(self.data.PASSWORD)
-      self.my_info_page.make_screenshot("Успешный вход")
       self.login_page.click_submit_button()
       
       self.dashboard_page.is_opened()
       self.dashboard_page.click_my_info_link()
       
       self.my_info_page.is_opened()
-      self.my_info_page.make_screenshot("Страница до изменений")
       self.my_info_page.change_name(new_name=f"Test #{random.randint(1, 100)}")
       
       self.my_info_page.select_female_gender()
