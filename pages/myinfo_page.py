@@ -27,7 +27,7 @@ class MyInfoPage(BasePage):
          field = self.wait.until(EC.element_to_be_clickable(self.FIRST_NAME_FIELD))
          
          field.click()
-         field.send_keys(Keys.CONTROL + "a")
+         field.send_keys(Keys.COMMAND + "a")
          field.send_keys(Keys.DELETE)
          
          assert field.get_attribute("value") == "", f"Поле не очистилось: {field.get_attribute('value')}"
